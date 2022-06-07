@@ -1,0 +1,39 @@
+@import '../../../../../mixin.scss';
+
+.form {
+  @include min_max_style('width', 320px, 600px);
+
+  .btns {
+    .add {
+      @include color (var(--green-color), var(--white-color));
+      border-radius: 5px;
+    }
+  }
+
+  .checked-btn {
+    filter: hue-rotate(280deg)
+  }
+
+  .col-sm-6 {
+    .password {
+      position: relative;
+
+      i {
+        @include position (absolute, 10px, 10px, unset, unset);
+        color: var(--light-font-color);
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .deleteBtn {
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+
+  .disabled-btn {
+    cursor: not-allowed;
+  }
+}

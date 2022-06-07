@@ -1,0 +1,19 @@
+<ng-container *ngIf="options?.showModal">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="header d-flex justify-content-between">
+      <span>{{options.header}}</span>
+      <img src="assets/images/svg/close.svg" (click)="close()" width="15px" alt="close">
+    </div>
+    <div class="message mt-3">
+      {{options.message}}
+    </div>
+    <div class="btns mt-5">
+      <button class="btn btn-default discard" *ngIf="options.showDiscardButton" (click)="close()">Discard</button>
+      <button [ngStyle]="{'background-color':options.color}" class="btn btn-default action" (click)="save()">
+        {{options.actionName}}</button>
+    </div>
+
+  </div>
+
+</ng-container>

@@ -1,0 +1,55 @@
+@mixin fontStyle($font,$letter:0,$color,$opacity:1) {
+    font: $font;
+    letter-spacing: $letter;
+    color: $color;
+    opacity: $opacity;
+}
+
+@mixin position($position,$top,$right,$bottom,$left,$index:0) {
+    position: $position;
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom;
+    z-index: $index;
+}
+
+@mixin border_bkg($border,$raduis, $bkg,$opacity:1){
+    border:$border;
+    border-radius:$raduis;
+    background-color: $bkg;
+    opacity: $opacity;
+}
+
+@mixin min_max_style($condition,$min,$max){
+   @if($condition=='width'){
+     min-width: $min;
+     max-width: $max
+   }
+   @else{
+       min-height:$min;
+       max-height:$max
+   }  
+ }
+
+ @mixin color ($bkg,$color) {
+    background: $bkg;
+    color: $color
+ }
+
+ @mixin transform_translate($value){
+    -webkit-transform: translate($value, $value);
+    transform: translate($value, $value); 
+ }
+
+
+ @mixin box_shadow ($width,$bkg,$shadow,$border,$raduis,$opacity:1){
+    width: $width;
+    background-color: $bkg;
+    box-shadow:$shadow;
+    border: $border;
+    border-radius: $raduis;
+    opacity: $opacity;
+ }
+
+

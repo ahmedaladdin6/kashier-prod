@@ -1,0 +1,30 @@
+@import '../../../../../mixin.scss';
+
+.form {
+    @include min_max_style('width', 320px, 500px);
+    @include border_bkg(1px solid var(--border-color), 5px, var(--white_color));
+
+    .header {
+        border-bottom: 1px solid var(--border-color);
+
+        input {
+            width: 100%;
+            padding: 3px 5px;
+            @include border_bkg(1px solid var(--border-color), 5px, var(--white_color) 0% 0% no-repeat padding-box, 1);
+        }
+
+        .add-product {
+            cursor: pointer;
+            color: var(--main-font-color);
+        }
+    }
+
+    .products {
+        @include min_max_style('height', 50px, 180px);
+        overflow-y: auto;
+
+        .items {
+            cursor: pointer;
+        }
+    }
+}

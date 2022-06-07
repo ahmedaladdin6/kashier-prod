@@ -1,0 +1,6 @@
+
+<app-spinner *ngIf="spinnerService.loading$ | async"></app-spinner>
+<app-toaster *ngIf="message !=''" [message]="message"></app-toaster>
+<div class="content">
+<router-outlet></router-outlet>
+</div>

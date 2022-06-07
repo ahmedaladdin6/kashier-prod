@@ -1,0 +1,80 @@
+<form [formGroup]="productForm" class="form p-2" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <label for="name" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="product name">
+    </div>
+
+    <div class="form-group mt-3">
+        <label class="mr-2">
+            <input type="radio" class="checked-btn mr-2" value="type1" formControlName="type">
+            <span>Type 1</span>
+        </label>
+        <label class="ml-2">
+            <input type="radio" class="checked-btn mr-2" value="type2" formControlName="type">
+            <span> Type 2</span>
+        </label>
+
+    </div>
+
+    <div class="form-group mt-3">
+        <label for="catg" class="form-label">Product Category</label>
+        <input type="text" class="form-control" id="catg" formControlName="category" placeholder="product Category">
+    </div>
+
+    <div class="form-check mt-3">
+        <label class="form-check-label">
+            <input class="form-check-input checked-btn" type="checkbox" name="check" formControlName="isSub"> This is a
+            sub-category
+        </label>
+    </div>
+
+    <div class="row form-group  mt-3">
+        <div class="col-sm-6">
+            <label for="ref" class="form-label">Refrence Id (Optional)</label>
+            <input type="text" class="form-control" id="ref" placeholder="Refrence ID" formControlName="ref_id">
+        </div>
+        <div class="col-sm-6 ">
+            <label for="pass" class="form-label">Password</label>
+            <div class="password">
+                <input [type]="!showPassword ? 'password' : 'text'" class="form-control" id="pass"
+                    placeholder="password" formControlName="password">
+                <i *ngIf="!showPassword" (click)="togglePassword()" class="far fa-eye-slash"></i>
+                <i *ngIf="showPassword" (click)="togglePassword()" class="far fa-eye"></i>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-sm-6 form-group">
+            <label for="pass" class="form-label">Delivery fees</label>
+            <div class="input-group">
+                <span class="input-group-text">EGP</span>
+                <input type="number" class="form-control" placeholder="Fees" formControlName="fees_egp">
+            </div>
+        </div>
+
+        <div class="col-sm-6 form-group">
+            <label for="pass" class="form-label">Delivery fees</label>
+            <div class="input-group">
+                <span class="input-group-text">%</span>
+                <input type="number" class="form-control" placeholder="Fess" formControlName="fess_prec">
+            </div>
+
+        </div>
+    </div>
+    <div class="btns mt-5 d-flex justify-content-between">
+        <span class="text-danger deleteBtn" (click)="action_delete()">
+            <span *ngIf="getID"> Delete</span>
+        </span>
+        <div>
+            <button type="button" class="btn cancel" (click)="cancel()"> Cancel</button>
+            <button type="submit" class="btn add" [class.disabled-btn]="productForm.invalid"
+                [disabled]="productForm.invalid">Save</button>
+        </div>
+    </div>
+</form>
+
+<app-modal [options]="modalOptions" (discard)="discard($event)" (action)="action($event)"></app-modal>

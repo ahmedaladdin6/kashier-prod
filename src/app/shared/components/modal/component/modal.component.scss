@@ -1,0 +1,37 @@
+@import '../../../../../mixin.scss';
+
+.overlay {
+    @include position (fixed, 0%, 0, 0, 0%, 99999);
+    background-color: var(--overlay-bkg-color);
+}
+
+.content {
+    @include position (absolute, 40%, unset, unset, 50%, 9999999999999);
+    @include transform_translate (-50%);
+    background-color: var(--white-color);
+    width: 340px;
+    padding: 20px;
+
+    .header {
+        @include fontStyle (bolder, 0, var(--main-font-color));
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .message {
+        @include fontStyle (normal normal 600 14px/22px Poppins, 0, var(--light-font-color));
+    }
+
+    .btns {
+        text-align: right;
+
+        button.discard {
+            @include fontStyle (normal normal 600 14px/21px Poppins, 0, var(--light-font-color));
+        }
+
+        button.action {
+            color: var(--white-color);
+        }
+    }
+}

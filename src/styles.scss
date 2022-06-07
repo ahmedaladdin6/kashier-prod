@@ -1,0 +1,23 @@
+@import 'mixin.scss'; 
+
+:root {
+    --main-font-color:#3D3D3D;
+    --border-color:#D6D6D6;
+    --light-font-color:#828282;
+    --bkg-color:#F6F7FB;
+    --white-color:#fff;
+    --green-color:#00BCB4;
+    --overlay-bkg-color:rgba(0, 0, 0, 0.7);
+    --box-shadow-color:#00000029;
+    --box-shadow-value :0px 3px 6px var(--box-shadow-color)
+}
+
+
+
+body {
+    background: var(--bkg-color) 0% 0% no-repeat padding-box;
+  
+    @include fontStyle(normal normal normal 14px/21px,0,var(main-font-color),1)
+
+}
+

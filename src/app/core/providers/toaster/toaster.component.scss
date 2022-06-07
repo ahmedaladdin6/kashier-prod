@@ -1,0 +1,18 @@
+@import '../../../../mixin.scss';
+
+.content {
+    @include position(fixed, unset, 20px, unset, unset);
+    @include box-shadow (350px, var(--white-color), var(--box-shadow-value), 1px solid var(--border-color), 8px);
+
+    .header {
+        text-align: right;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .content {
+        @include position(fixed, unset, 0, 0, 0);
+        width: 100%;
+    }
+}

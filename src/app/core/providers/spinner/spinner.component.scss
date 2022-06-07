@@ -1,0 +1,5 @@
+@import '../../../../mixin.scss';
+
+img{
+  @include position(fixed,50%,unset,unset,46%,99999999)
+  }
